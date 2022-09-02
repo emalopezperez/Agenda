@@ -4,7 +4,7 @@ const Nav = () => {
 
   return (
     <>
-        <h1 className="text-4xl font-serif text-center mt-20 font-black md:w-2/2 text-gray-400">
+        <h1 className="text-4xl font-serif text-center mt-20 font-black md:w-2/2 text-gray-700">
             Schedule Organizer
         </h1>
       </>

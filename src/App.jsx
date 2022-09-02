@@ -28,12 +28,12 @@ const remove= (id)=>{
 
 
   return (
-    <div className="container mx-20 ">
+    <div className="container mx-auto md:mt-0 ">
       <div className=''>
           <Nav/>
       </div>
 
-      <div className='mt-18 md:flex mt-20 '>
+      <div className='mt-12 md:flex'>
         <Formulario
         actividad={actividad}
         setActividad={setActividad}

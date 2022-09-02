@@ -63,12 +63,12 @@ const validaciones = (e)=>{
 }
   return (
 
-    <div className="w-1/2 lg:w-2/5">
+    <div className="md:w-1/2 lg:w-2/5 mx-5">
         <h2 className="text-2xl">
           Listado de Tareas
         </h2>
-        <p className="mt-7 mb-5">
-          Anade las tareas que deseas Realizar
+        <p className="mt-7 mb-5 text-gray-600">
+          Añade las tareas que deseas Realizar
         </p>
 
         <form onSubmit={validaciones} className='shadow-md rounded-lg py-10 px-5 bg-gray-200 mb-8'>
@@ -113,7 +113,7 @@ const validaciones = (e)=>{
           </div>
           <input
             type="submit"
-            className='bg-indigo-200 w-full p-3 text-white cursor-pointer rounded-md'
+            className='bg-indigo-200 w-full p-3 text-black cursor-pointer rounded-md'
             value={editar.id ? 'Guardar Cambios' : 'Agregar Actividad'}
           />
 
