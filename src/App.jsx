@@ -28,7 +28,7 @@ const remove= (id)=>{
 
 
   return (
-    <div className="container mx-auto md:mt-0 ">
+    <div className="container mx-auto md:mt-0 bg-blue-90">
       <div className=''>
           <Nav/>
       </div>
