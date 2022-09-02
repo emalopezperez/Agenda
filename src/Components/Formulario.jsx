@@ -3,13 +3,21 @@ import React from 'react'
 import {useEffect,useState } from 'react'
 import MensajeError from './MensajeError'
 
-const Formulario = ({actividad,setActividad}) => {
+const Formulario = ({actividad, setActividad, editar,setEditar}) => {
 
   const [actividades, setActividades] =useState('')
   const [descripcion,setDescripcion] = useState('')
   const [fecha, setFecha] = useState('')
 
   const [error,setError] = useState(false)
+  
+  useEffect(()=>{
+    if(Object.keys(editar).length > 0){
+      setActividades(editar.actividades)
+      setDescripcion(editar.descripcion)
+      setFecha(editar.fecha)
+    }
+  },[editar])
 
 // generando un id
   const generarId = ()=>{
@@ -33,12 +41,21 @@ const validaciones = (e)=>{
       actividades,
       descripcion,
       fecha,
-// id generado
-      id: generarId()
     }
 
-    setActividad([...actividad ,objetoActividades])
+  if(editar.id){
+      objetoActividades.id= editar.id
+      const actividadesActualizadas = actividad.map(act => act.id === editar.id ? objetoActividades : act);
 
+      setActividad(actividadesActualizadas);
+      setEditar({})
+      
+    }else{
+      objetoActividades.id= generarId();
+      setActividad([...actividad ,objetoActividades]);
+  }
+
+//Reinciciar campos
     setActividades('')
     setDescripcion('')
     setFecha('')
@@ -97,7 +114,7 @@ const validaciones = (e)=>{
           <input
             type="submit"
             className='bg-indigo-200 w-full p-3 text-white cursor-pointer rounded-md'
-            value="Agregar Actividad"
+            value={editar.id ? 'Guardar Cambios' : 'Agregar Actividad'}
           />
 
       </form>

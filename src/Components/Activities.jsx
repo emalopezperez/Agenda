@@ -1,9 +1,8 @@
 import React from 'react'
 import ListaDeActividades from './ListaDeActividades'
 
-const Activities = ({actividad}) => {
 
-
+const Activities = ({actividad, setEditar,remove,realizado}) => {
 
   return (
     <div className="md:w-1/2 lg:w-2/5 md:h-screen overflow-y-scroll bg-gray-200 md:ml-0 lg:m-8">
@@ -17,6 +16,9 @@ const Activities = ({actividad}) => {
                   //agregando id generado
                   key={act.id}
                   act={act}
+                  setEditar={setEditar}
+                  remove={remove}
+                  realizado={realizado}
                 />
             ))
         }
